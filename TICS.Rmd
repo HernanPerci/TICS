@@ -1,0 +1,461 @@
+---
+title: "TICS"
+author: "Hernan Perci Nuñez Palomino"
+date: "15/12/2020"
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+        
+---
+
+## Librerias
+
+```{r}
+
+library(skimr)
+library(foreign)
+library(tidyverse)
+
+```
+
+
+## Resumen año 2016
+
+```{r}
+
+data2016 <- read.dbf("2016.dbf")
+skim(data2016)
+
+```
+
+## PUB Primaria 2016 de los distritos de Espinar
+
+```{r}
+
+PUB_PRIMARIA_2016_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2016 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_PRIMARIA_2016_DISTRITOS()
+
+```
+
+
+## URBA Primaria 2016 de los distritos de Espinar
+
+```{r}
+
+URBA_PRIMARIA_2016_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2016 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", AREA_SIG == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_PRIMARIA_2016_DISTRITOS()
+
+```
+
+
+## PUB Secundaria 2016 de los distritos de Espinar
+
+```{r}
+
+PUB_SECUNDARIA_2016_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2016 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_SECUNDARIA_2016_DISTRITOS()
+
+```
+
+
+## URBA Secundaria 2016 de los distritos de Espinar
+
+```{r}
+
+URBA_SECUNDARIA_2016_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2016 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", AREA_SIG == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_SECUNDARIA_2016_DISTRITOS()
+
+```
+
+
+## Resumen año 2017
+
+```{r}
+
+data2017 <- read.dbf("2017.dbf")
+skim(data2017)
+
+```
+
+## PUB Primaria 2017 de los distritos de Espinar
+
+```{r}
+
+PUB_PRIMARIA_2017_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2017 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "01", CHK1 == "SI", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_PRIMARIA_2017_DISTRITOS()
+
+```
+
+
+## URBA Primaria 2017 de los distritos de Espinar
+
+```{r}
+
+URBA_PRIMARIA_2017_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2017 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "01", CHK1 == "SI", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_PRIMARIA_2017_DISTRITOS()
+
+```
+
+
+## PUB Secundaria 2017 de los distritos de Espinar
+
+```{r}
+
+PUB_SECUNDARIA_2017_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2017 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "01", CHK1 == "SI", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_SECUNDARIA_2017_DISTRITOS()
+
+```
+
+
+## URBA Secundaria 2017 de los distritos de Espinar
+
+```{r}
+
+URBA_SECUNDARIA_2017_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2017 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "01", CHK1 == "SI", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_SECUNDARIA_2017_DISTRITOS()
+
+```
+
+
+## Resumen año 2018
+
+```{r}
+
+data2018 <- read.dbf("2018.dbf")
+skim(data2018)
+
+```
+
+## PUB Primaria 2018 de los distritos de Espinar
+
+```{r}
+
+PUB_PRIMARIA_2018_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2018 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "S", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_PRIMARIA_2018_DISTRITOS()
+
+```
+
+
+## URBA Primaria 2018 de los distritos de Espinar
+
+```{r}
+
+URBA_PRIMARIA_2018_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2018 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "S", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_PRIMARIA_2018_DISTRITOS()
+
+```
+
+
+## PUB Secundaria 2018 de los distritos de Espinar
+
+```{r}
+
+PUB_SECUNDARIA_2018_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2018 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "S", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_SECUNDARIA_2018_DISTRITOS()
+
+```
+
+
+## URBA Secundaria 2018 de los distritos de Espinar
+
+```{r}
+
+URBA_SECUNDARIA_2018_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2018 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "S", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_SECUNDARIA_2018_DISTRITOS()
+
+```
+
+
+## Resumen año 2019
+
+```{r}
+
+data2019 <- read.dbf("2019.dbf")
+skim(data2019)
+
+```
+
+## PUB Primaria 2019 de los distritos de Espinar
+
+```{r}
+
+PUB_PRIMARIA_2019_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2019 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "1", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_PRIMARIA_2019_DISTRITOS()
+
+```
+
+
+## URBA Primaria 2019 de los distritos de Espinar
+
+```{r}
+
+URBA_PRIMARIA_2019_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2019 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "1", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_PRIMARIA_2019_DISTRITOS()
+
+```
+
+
+## PUB Secundaria 2019 de los distritos de Espinar
+
+```{r}
+
+PUB_SECUNDARIA_2019_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2019 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "1", GES_DEP == "A1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+PUB_SECUNDARIA_2019_DISTRITOS()
+
+```
+
+
+## URBA Secundaria 2019 de los distritos de Espinar
+
+```{r}
+
+URBA_SECUNDARIA_2019_DISTRITOS <- function() {
+  resultado <- as.list(NA)
+  i <- 0
+  for (UBIGEO in c("080801", "080802", "080803", "080804", "080805", "080806", "080807", "080808")) {
+    
+    i <- i+1  
+    
+    DISTRITO <- data2019 %>%
+    filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "1", AREA_MED == "1")
+
+  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  
+  }
+  resultado
+}
+
+URBA_SECUNDARIA_2019_DISTRITOS()
+
+```
+
+
