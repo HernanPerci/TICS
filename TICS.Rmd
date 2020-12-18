@@ -1,6 +1,6 @@
 ---
-title: "TICS"
-author: "Hernan Perci Nuñez Palomino"
+title: "Acceso a internet"
+author: "Victor Raico / Hernan Perci Nuñez Palomino"
 date: "15/12/2020"
 output:
   html_document:
@@ -32,7 +32,7 @@ skim(data2016)
 
 ```
 
-## PUB Primaria 2016 de los distritos de Espinar
+### PUB Primaria 2016 de los distritos de Espinar
 
 ```{r}
 
@@ -46,7 +46,7 @@ PUB_PRIMARIA_2016_DISTRITOS <- function() {
     DISTRITO <- data2016 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -57,7 +57,7 @@ PUB_PRIMARIA_2016_DISTRITOS()
 ```
 
 
-## URBA Primaria 2016 de los distritos de Espinar
+### URBA Primaria 2016 de los distritos de Espinar
 
 ```{r}
 
@@ -71,7 +71,7 @@ URBA_PRIMARIA_2016_DISTRITOS <- function() {
     DISTRITO <- data2016 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", AREA_SIG == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -82,7 +82,7 @@ URBA_PRIMARIA_2016_DISTRITOS()
 ```
 
 
-## PUB Secundaria 2016 de los distritos de Espinar
+### PUB Secundaria 2016 de los distritos de Espinar
 
 ```{r}
 
@@ -96,7 +96,7 @@ PUB_SECUNDARIA_2016_DISTRITOS <- function() {
     DISTRITO <- data2016 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -107,7 +107,7 @@ PUB_SECUNDARIA_2016_DISTRITOS()
 ```
 
 
-## URBA Secundaria 2016 de los distritos de Espinar
+### URBA Secundaria 2016 de los distritos de Espinar
 
 ```{r}
 
@@ -121,7 +121,7 @@ URBA_SECUNDARIA_2016_DISTRITOS <- function() {
     DISTRITO <- data2016 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "502", TIPDATO == "01", CHK1 == "S", AREA_SIG == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -141,7 +141,7 @@ skim(data2017)
 
 ```
 
-## PUB Primaria 2017 de los distritos de Espinar
+### PUB Primaria 2017 de los distritos de Espinar
 
 ```{r}
 
@@ -155,7 +155,7 @@ PUB_PRIMARIA_2017_DISTRITOS <- function() {
     DISTRITO <- data2017 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "01", CHK1 == "SI", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -166,7 +166,7 @@ PUB_PRIMARIA_2017_DISTRITOS()
 ```
 
 
-## URBA Primaria 2017 de los distritos de Espinar
+### URBA Primaria 2017 de los distritos de Espinar
 
 ```{r}
 
@@ -180,7 +180,7 @@ URBA_PRIMARIA_2017_DISTRITOS <- function() {
     DISTRITO <- data2017 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "01", CHK1 == "SI", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -191,7 +191,7 @@ URBA_PRIMARIA_2017_DISTRITOS()
 ```
 
 
-## PUB Secundaria 2017 de los distritos de Espinar
+### PUB Secundaria 2017 de los distritos de Espinar
 
 ```{r}
 
@@ -205,7 +205,7 @@ PUB_SECUNDARIA_2017_DISTRITOS <- function() {
     DISTRITO <- data2017 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "01", CHK1 == "SI", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -216,7 +216,7 @@ PUB_SECUNDARIA_2017_DISTRITOS()
 ```
 
 
-## URBA Secundaria 2017 de los distritos de Espinar
+### URBA Secundaria 2017 de los distritos de Espinar
 
 ```{r}
 
@@ -230,7 +230,7 @@ URBA_SECUNDARIA_2017_DISTRITOS <- function() {
     DISTRITO <- data2017 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "01", CHK1 == "SI", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -250,7 +250,7 @@ skim(data2018)
 
 ```
 
-## PUB Primaria 2018 de los distritos de Espinar
+### PUB Primaria 2018 de los distritos de Espinar
 
 ```{r}
 
@@ -264,7 +264,7 @@ PUB_PRIMARIA_2018_DISTRITOS <- function() {
     DISTRITO <- data2018 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "S", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -275,7 +275,7 @@ PUB_PRIMARIA_2018_DISTRITOS()
 ```
 
 
-## URBA Primaria 2018 de los distritos de Espinar
+### URBA Primaria 2018 de los distritos de Espinar
 
 ```{r}
 
@@ -289,7 +289,7 @@ URBA_PRIMARIA_2018_DISTRITOS <- function() {
     DISTRITO <- data2018 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "S", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -300,7 +300,7 @@ URBA_PRIMARIA_2018_DISTRITOS()
 ```
 
 
-## PUB Secundaria 2018 de los distritos de Espinar
+### PUB Secundaria 2018 de los distritos de Espinar
 
 ```{r}
 
@@ -314,7 +314,7 @@ PUB_SECUNDARIA_2018_DISTRITOS <- function() {
     DISTRITO <- data2018 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "S", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -325,7 +325,7 @@ PUB_SECUNDARIA_2018_DISTRITOS()
 ```
 
 
-## URBA Secundaria 2018 de los distritos de Espinar
+### URBA Secundaria 2018 de los distritos de Espinar
 
 ```{r}
 
@@ -339,7 +339,7 @@ URBA_SECUNDARIA_2018_DISTRITOS <- function() {
     DISTRITO <- data2018 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "S", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -359,7 +359,7 @@ skim(data2019)
 
 ```
 
-## PUB Primaria 2019 de los distritos de Espinar
+### PUB Primaria 2019 de los distritos de Espinar
 
 ```{r}
 
@@ -373,7 +373,7 @@ PUB_PRIMARIA_2019_DISTRITOS <- function() {
     DISTRITO <- data2019 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "1", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -384,7 +384,7 @@ PUB_PRIMARIA_2019_DISTRITOS()
 ```
 
 
-## URBA Primaria 2019 de los distritos de Espinar
+### URBA Primaria 2019 de los distritos de Espinar
 
 ```{r}
 
@@ -398,7 +398,7 @@ URBA_PRIMARIA_2019_DISTRITOS <- function() {
     DISTRITO <- data2019 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "B0", CUADRO == "C502", TIPDATO == "11", CHK1 == "1", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -409,7 +409,7 @@ URBA_PRIMARIA_2019_DISTRITOS()
 ```
 
 
-## PUB Secundaria 2019 de los distritos de Espinar
+### PUB Secundaria 2019 de los distritos de Espinar
 
 ```{r}
 
@@ -423,7 +423,7 @@ PUB_SECUNDARIA_2019_DISTRITOS <- function() {
     DISTRITO <- data2019 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "1", GES_DEP == "A1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
@@ -434,7 +434,7 @@ PUB_SECUNDARIA_2019_DISTRITOS()
 ```
 
 
-## URBA Secundaria 2019 de los distritos de Espinar
+### URBA Secundaria 2019 de los distritos de Espinar
 
 ```{r}
 
@@ -448,7 +448,7 @@ URBA_SECUNDARIA_2019_DISTRITOS <- function() {
     DISTRITO <- data2019 %>%
     filter(CODOOII == "080008", CODGEO == UBIGEO, NIV_MOD == "F0", CUADRO == "C501", TIPDATO == "11", CHK1 == "1", AREA_MED == "1")
 
-  resultado[[i]] <-list(paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO), skim(DISTRITO))
+  resultado[[i]] <-paste("Nuestro distrito tiene codigo de ubigeo: ", UBIGEO, "y hay ", nrow(DISTRITO), "colegios")
   
   }
   resultado
